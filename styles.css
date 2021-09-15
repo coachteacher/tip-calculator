@@ -1,0 +1,274 @@
+    /*Cascading Style Sheet*/
+    /* Variables */
+:root{
+    --background-color: #c5e4e7;
+    --display-color: #0b4245;
+    --display-text-color: white;
+    --form-color: white;
+    --pop-color: #26c0ab;
+    --heading-color: #2c6c6f;
+    --input-text-color: #969696;
+    --input-color: #f4fafa;
+    --input-focus-color: #0b4245;
+    --button-hover-color: #84e3d6;
+    --reset-button-color: #49d0c1;
+    --output-number-color: #2ea598;
+}
+
+    /* elements */
+    *{
+        font-family: 'Space Mono', monospace;
+    }
+    body{
+        background: var(--background-color);
+        margin:0;
+    }
+    h1{
+        color: var(--heading-color);
+        text-align: center;
+        letter-spacing: 5px;
+        font-size: 22px;
+        font-weight: 800;
+    }
+    button{
+        background-color: var(--display-color);
+        color: hsl(189, 43%, 91%);
+        border: 1px solid var(--display-color);
+        border-radius: 7px;
+        height: 55px;
+        font-size: 1.4em;
+        font-weight: 600;
+    }
+    input{
+        text-align: right;
+        font-size: 1.3em;
+        font-weight: 700;
+        color: var(--input-text-color);
+        width: 100%;
+        box-sizing: border-box;
+        height: 40px;
+        border-radius: 7px;
+        border: solid 2px var(--input-color);
+        background-color: var(--input-color);
+        padding-right: 10px;
+    }
+    strong{
+        font-size: 0.8em;
+        font-weight: 600;
+    }
+    
+    /* Classes */
+    .calculator-body{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: 63%;
+        border-radius: 25px;
+        border: var(--form-color) solid 2px;
+        padding: 2%;
+        background-color: var(--form-color);
+        min-width:800px;
+    }
+    .form{
+        width: 50%;
+        background-color: var(--form-color);
+        margin-right: 2%;
+        margin-left: 2%;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--input-text-color);
+        margin-top: 30px;
+        border: none;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .heading{
+        width: 1%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 140px;
+        margin-bottom: 72px;
+    }
+    .display{
+        width: 50%;
+        background-color: var(--display-color);
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        color: var(--display-text-color);
+        border-radius: 15px;
+        padding-top: 55px;
+        padding-left: 40px;
+        padding-bottom: 40px;
+    }
+    .button-grid{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-column-gap: 5%;
+        grid-row-gap: 18%;  
+    }
+    .numPplLabel{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    .outputNum{
+        color:var(--output-number-color);
+        font-size: 30pt;
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        margin-left: auto;
+        margin-right: 45px;
+        margin-bottom: 35px;
+    }
+    .display-container{
+        display:grid;
+        grid-template-columns:30% 70%;
+    }
+    .input-icon{
+        position:absolute;
+        padding: 15px;
+    }
+   
+    /* IDs */
+    #bill{
+        margin-top: 5px;
+        margin-bottom: 45px;
+        text-align: right;
+    }
+    #num_ppl{
+        margin-bottom:25px;
+    }
+    #reset{
+        width: 80%;
+        background-color: var(--reset-button-color);
+        color: var(--display-color);
+        border-radius: 6px;
+        display: block;
+        text-align:center;
+        margin-top: 60px;
+        font-size: 12pt;
+        border: none;
+    }
+    #numError{
+        color:red; 
+        font-size:1em; 
+        visibility: hidden;
+        text-align: right;
+    }
+    #varPct{
+        height: 2.8em;
+        text-align: center;
+        color: var(--input-text-color);
+    }
+    /* PsuedoClasses */
+    div > button:hover{
+        background-color:var(--button-hover-color);
+        border: none;
+        cursor: pointer;
+        color: var(--display-color);
+    }
+    #varPct:hover, #bill:hover, #numPpl:hover{
+        border: solid 2px var(--pop-color);
+        cursor: pointer;
+        color: var(--input-focus-color);
+    }
+    #varPct:focus, #bill:focus, #numPpl:focus{
+        border: solid 2px (--pop-color);
+        border-radius: 3px;
+        outline:inherit;
+        cursor: pointer;
+        color: var(--input-focus-color);
+    }
+    #reset:hover{
+        background-color: var(--button-hover-color);
+        color: var(--display-color);
+        cursor: pointer;
+    }
+    
+
+
+@media only screen and (max-width:850px){
+    .calculator-body{
+        display: flex;
+        flex-direction:column;
+        align-items:center;
+        width: 63%;
+        border-radius: 25px;
+        border: var(--form-color) solid 2px;
+        padding: 2%;
+        background-color: var(--form-color);
+        min-width:425px;
+    }
+    .form{
+        width: 95%;
+        background-color: var(--form-color);
+        margin-right: 2%;
+        margin-left: 2%;
+        font-size: 1.1em;
+        font-weight: 700;
+        color: var(--input-text-color);
+        margin-top: 30px;
+        border: none;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .display{
+        width: 80%;
+        background-color: var(--display-color);
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 25px;
+        margin-bottom: 12px;
+        color: var(--form-color);
+        border-radius: 15px;
+        padding-top: 55px;
+        padding-left: 40px;
+        padding-bottom:0;
+    }
+     input{
+        text-align: right;
+        font-size: 1.3em;
+        font-weight: 700;
+        color: var(--input-text-color);
+        width: 100%;
+        box-sizing: border-box;
+        height: 50px;
+        border-radius: 7px;
+        border: solid 2px var(--input-color);
+        background-color: var(--input-color);
+        padding-right: 10px;
+    }
+    #reset{
+        width: 100%;
+        background-color: #49d0c1;
+        color: var(--display-color);
+        border-radius: 6px;
+        margin-left:-5%;
+        text-align:center;
+        margin-top: 0px;
+        margin-bottom: 8%;
+        font-size: 16pt;
+        border: none;
+    }
+    .heading{
+        width: 1%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+    h1{
+        color: var(--heading-color);
+        text-align: center;
+        letter-spacing: 5px;
+        font-size: 26px;
+        font-weight: 800;
+    }
+}
+    
